@@ -1,3 +1,4 @@
-from django.shortcuts import render
+from django.http import HttpResponse# Создаем экземпляр класса HttpResponse
 
-# Create your views here.
+def index(request):#request - экземпляр класса HttpRequest
+    return HttpResponse("Здесть будет выведен список объявлений.")#HttpResponse - отправляет строку в ответ на запрос
