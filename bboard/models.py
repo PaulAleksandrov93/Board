@@ -7,7 +7,7 @@ class Bb(models.Model):
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Опубликовано')
 
     rubric = models.ForeignKey('Rubric', null=True, on_delete=models.PROTECT, verbose_name='Рубрика')
-    
+
 
 
     class Meta:
@@ -18,6 +18,8 @@ class Bb(models.Model):
 class Rubric(models.Model):
     name = models.CharField(max_length=20, db_index=True, verbose_name='Название')
 
+    def __str__(self):
+        return self.name
 
     class Meta:
        verbose_name_plural = 'Рубрики'
